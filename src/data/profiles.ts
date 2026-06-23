@@ -16,11 +16,13 @@ export interface JobProfile {
   };
 }
 
+// Salary data sourced from BLS OEWS (May 2024), Glassdoor, Salary.com, Indeed, PayScale — June 2026
+// All figures are US national median or mean for entry/junior level
 export const jobProfiles: JobProfile[] = [
   {
     id: "junior-accountant",
     title: "Junior Accountant",
-    salary: 40000,
+    salary: 57252,
     category: "Finance",
     disposable: [
       { label: "Unused subscriptions", amount: 15 },
@@ -65,7 +67,7 @@ export const jobProfiles: JobProfile[] = [
   {
     id: "copywriter",
     title: "Copywriter",
-    salary: 45000,
+    salary: 63409,
     category: "Marketing",
     disposable: [
       { label: "Software subscriptions", amount: 20 },
@@ -113,7 +115,7 @@ export const jobProfiles: JobProfile[] = [
   {
     id: "graphic-designer",
     title: "Graphic Designer",
-    salary: 42000,
+    salary: 55000,
     category: "Creative",
     disposable: [
       { label: "Stock asset subscriptions", amount: 18 },
@@ -161,7 +163,7 @@ export const jobProfiles: JobProfile[] = [
   {
     id: "paralegal",
     title: "Paralegal",
-    salary: 38000,
+    salary: 55000,
     category: "Legal",
     disposable: [
       { label: "Legal research tools", amount: 25 },
@@ -208,8 +210,8 @@ export const jobProfiles: JobProfile[] = [
   },
   {
     id: "software-tester",
-    title: "Software Tester",
-    salary: 55000,
+    title: "Software Tester (QA)",
+    salary: 65000,
     category: "Technology",
     disposable: [
       { label: "Dev tool subscriptions", amount: 20 },
@@ -257,7 +259,7 @@ export const jobProfiles: JobProfile[] = [
   {
     id: "data-entry-clerk",
     title: "Data Entry Clerk",
-    salary: 32000,
+    salary: 38000,
     category: "Administration",
     disposable: [
       { label: "Music/streaming", amount: 12 },
