@@ -61,36 +61,49 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-[calc(100vh-5rem)] px-6">
-      <div className="w-full max-w-2xl mx-auto text-center animate-fade-in">
+      <div className="w-full max-w-xl mx-auto text-center animate-fade-in">
         {/* Tagline */}
-        <p className="font-sans text-caption text-burnt-sienna uppercase tracking-[0.2em] mb-4">
+        <p className="font-sans text-caption text-burnt-sienna uppercase tracking-[0.2em] mb-5">
           Will AI Steal Your Future?
         </p>
 
         {/* Headline */}
-        <div className="mb-6">
-          <CharReveal
-            text="Don't predict the end of your career."
-            className="font-sans text-display font-medium leading-display text-warm-cream"
-            staggerMs={25}
-          />
-          <br />
-          <CharReveal
-            text="Finance its evolution."
-            className="font-sans text-display font-medium leading-display text-burnt-sienna"
-            staggerMs={25}
-            as="span"
-          />
+        <div className="mb-8">
+          <div className="font-sans text-display font-medium leading-display text-warm-cream">
+            <CharReveal
+              text="Don't predict the end of"
+              className="inline"
+              staggerMs={25}
+              as="span"
+            />
+            <br />
+            <span className="whitespace-nowrap">
+              <CharReveal
+                text="your career."
+                className="inline"
+                staggerMs={25}
+                as="span"
+              />
+            </span>
+          </div>
+          <div className="mt-2">
+            <CharReveal
+              text="Finance its evolution."
+              className="font-sans text-display font-medium leading-display text-burnt-sienna"
+              staggerMs={25}
+              as="span"
+            />
+          </div>
         </div>
 
-        <p className="font-sans text-subheading text-grey-brown mb-10 max-w-lg mx-auto">
+        <p className="font-sans text-subheading text-grey-brown mb-12 max-w-md mx-auto">
           Type your job title below. Evolve.ai builds a financial roadmap to
           turn AI anxiety into AI advantage.
         </p>
 
         {/* Input area */}
-        <div ref={inputRef} className="relative max-w-md mx-auto mb-8">
-          <div className="relative">
+        <div ref={inputRef} className="relative max-w-md mx-auto mt-10 mb-10">
+          <div className="relative flex items-center">
             <GhostInput
               type="text"
               placeholder="e.g. Junior Accountant"
@@ -100,7 +113,7 @@ export default function Home() {
             />
             <Search
               size={16}
-              className="absolute right-2 top-1/2 -translate-y-1/2 text-warm-cream/40"
+              className="absolute right-2 text-warm-cream/40 pointer-events-none"
             />
           </div>
 
@@ -129,8 +142,8 @@ export default function Home() {
 
           {/* Salary input — shows when a job is selected */}
           {selected && (
-            <div className="mt-4 animate-slide-up">
-              <div className="relative">
+            <div className="mt-5 animate-slide-up">
+              <div className="relative flex items-center">
                 <GhostInput
                   type="number"
                   placeholder="Your monthly take-home pay ($)"
@@ -140,7 +153,7 @@ export default function Home() {
                 />
                 <DollarSign
                   size={16}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 text-warm-cream/40"
+                  className="absolute right-2 text-warm-cream/40 pointer-events-none"
                 />
               </div>
             </div>

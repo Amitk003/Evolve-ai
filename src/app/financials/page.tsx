@@ -54,17 +54,17 @@ function FinancialsContent() {
   return (
     <div className="max-w-4xl mx-auto px-6 py-12">
       {/* Header */}
-      <div className="mb-8 animate-fade-in">
+      <div className="mb-12 animate-fade-in">
         <p className="font-sans text-caption text-burnt-sienna uppercase tracking-[0.2em] mb-3">
           The Financial Impact
         </p>
         <CharReveal
           text="Your Future, Split in Two"
-          className="font-sans text-heading-lg font-medium leading-heading-lg text-warm-cream mb-3"
+          className="font-sans text-heading-lg font-medium leading-heading-lg text-warm-cream mb-4"
           as="h1"
           staggerMs={20}
         />
-        <p className="font-sans text-body text-grey-brown">
+        <p className="font-sans text-body text-grey-brown pb-2">
           One path leads to stagnation. The other to a{" "}
           <span className="text-evolved-green-light">
             +$

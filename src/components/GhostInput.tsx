@@ -19,7 +19,7 @@ export default function GhostInput({
         </label>
       )}
       <input
-        className={`w-full bg-transparent text-warm-cream font-sans text-[15px] font-normal border-0 border-b border-warm-cream rounded-none py-[1px] px-[2px] pr-9 outline-none transition-all duration-300 ease placeholder:text-warm-cream/40 focus:border-burnt-sienna ${className}`}
+        className={`w-full bg-transparent text-warm-cream font-sans text-[15px] font-normal border-0 border-b border-warm-cream rounded-none py-2 px-0 pr-9 outline-none transition-all duration-300 ease placeholder:text-warm-cream/40 focus:border-burnt-sienna ${className}`}
         {...props}
       />
     </div>
