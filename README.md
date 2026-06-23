@@ -1,36 +1,121 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Evolve.ai
 
-## Getting Started
+**Track:** Money, Jobs & AI — Will AI Steal My Future?
 
-First, run the development server:
+> Don't predict the end of your career. Finance its evolution.
+
+Evolve.ai is a predictive financial co-pilot that transforms AI career anxiety into a micro-budgeted financial roadmap to become the AI-augmented worker of tomorrow.
+
+## Demo
+
+- **Live Site:** [https://evolve-ai.vercel.app](https://evolve-ai.vercel.app)
+- **Repository:** [https://github.com/Amitk003/Evolve-ai](https://github.com/Amitk003/Evolve-ai)
+
+---
+
+## Quick Start
 
 ```bash
+# Install dependencies
+npm install
+
+# Start dev server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Copy `.env.example` to `.env.local` and add your Gemini API key:
 
-## Learn More
+```bash
+GEMINI_API_KEY=your_key_here
+```
 
-To learn more about Next.js, take a look at the following resources:
+The app works fully without an API key — it falls back to hardcoded evolution data.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Tech Stack
 
-## Deploy on Vercel
+| Layer | Technology |
+|-------|-----------|
+| Framework | Next.js 16 (App Router) |
+| Language | TypeScript |
+| Styling | Tailwind CSS v4 |
+| Animations | Framer Motion, CSS animations |
+| Icons | Lucide React |
+| Font | Plus Jakarta Sans (variable) |
+| AI (optional) | Gemini 2.5 Flash |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── api/evolve/route.ts   # Gemini LLM API endpoint
+│   ├── financials/page.tsx    # Split-screen financial impact
+│   ├── timeline/page.tsx      # Career evolution timeline
+│   ├── globals.css            # Design tokens + global styles
+│   ├── layout.tsx             # Root layout with NavBar
+│   └── page.tsx               # "Reality Check" input screen
+├── components/
+│   ├── AnimatedCounter.tsx    # Eased number counter
+│   ├── ButtonGhostFlat.tsx    # Flat ghost text button
+│   ├── ButtonPill.tsx         # Pill button (filled/ghost/outlined)
+│   ├── CharReveal.tsx         # Character-by-character text reveal
+│   ├── DashedDivider.tsx      # Section separator
+│   ├── GhostInput.tsx         # Bottom-border input field
+│   ├── NavBar.tsx             # Top navigation with letter stagger
+│   ├── PageTransition.tsx     # AnimatePresence page wrapper
+│   ├── ScrollPrompt.tsx       # Animated scroll indicator
+│   ├── SplitScreen.tsx        # Static vs Evolved financial comparison
+│   └── TimelineView.tsx       # Vertical career timeline
+├── data/
+│   └── profiles.ts            # 6 hardcoded job profiles
+└── lib/
+    └── gemini.ts              # Gemini API client + fallback
+```
+
+---
+
+## Design System
+
+Inspired by the **ORYZO AI** aesthetic — warm dark minimalism.
+
+| Token | Value | Usage |
+|-------|-------|-------|
+| Studio Black | `#100904` | Page canvas |
+| Warm Cream | `#ffedd7` | All text, borders |
+| Cork Shadow | `#40372e` | Dashed dividers |
+| Dark Cork | `#382416` | Filled button bg |
+| Burnt Sienna | `#dc5000` | Hairline accent |
+| Grey Brown | `#6c5f51` | Muted text |
+| Static Red | `#8b1a1a` | Static path (finacial) |
+| Evolved Green | `#1a6b3c` | Evolved path (finacial) |
+
+Typography uses **Plus Jakarta Sans Variable** at every scale from 10px to 51px.
+
+---
+
+## Branches
+
+| Branch | Description |
+|--------|-------------|
+| `main` | Stable production |
+| `phase-0-setup` | Next.js scaffold + deps |
+| `phase-1-design-system` | Design tokens, components, base layout |
+| `phase-5-animations-polish` | Animations, transitions, counters |
+| `phase-6-documentation` | Docs (you are here) |
+
+---
+
+## License
+
+MIT
