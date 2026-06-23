@@ -68,32 +68,13 @@ export default function Home() {
         </p>
 
         {/* Headline */}
-        <div className="mb-8">
-          <div className="font-sans text-display font-medium leading-display text-warm-cream">
-            <CharReveal
-              text="Don't predict the end of"
-              className="inline"
-              staggerMs={25}
-              as="span"
-            />
-            <br />
-            <span className="whitespace-nowrap">
-              <CharReveal
-                text="your career."
-                className="inline"
-                staggerMs={25}
-                as="span"
-              />
-            </span>
-          </div>
-          <div className="mt-2">
-            <CharReveal
-              text="Finance its evolution."
-              className="font-sans text-display font-medium leading-display text-burnt-sienna"
-              staggerMs={25}
-              as="span"
-            />
-          </div>
+        <div className="mb-8 max-w-lg mx-auto">
+          <p className="font-sans text-display font-medium leading-display text-warm-cream">
+            Don&apos;t predict the end of your career.
+          </p>
+          <p className="font-sans text-display font-medium leading-display text-burnt-sienna mt-2">
+            Finance its evolution.
+          </p>
         </div>
 
         <p className="font-sans text-subheading text-grey-brown mb-12 max-w-md mx-auto">
