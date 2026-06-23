@@ -6,10 +6,10 @@
 
 Evolve.ai is a predictive financial co-pilot that transforms AI career anxiety into a micro-budgeted financial roadmap to become the AI-augmented worker of tomorrow.
 
-## Demo
+## Repository
 
-- **Live Site:** [https://evolve-ai.vercel.app](https://evolve-ai.vercel.app)
-- **Repository:** [https://github.com/Amitk003/Evolve-ai](https://github.com/Amitk003/Evolve-ai)
+- **GitHub:** [https://github.com/Amitk003/Evolve-ai](https://github.com/Amitk003/Evolve-ai)
+- **Live Site:** *Not yet deployed — run locally with `npm run dev`*
 
 ---
 
