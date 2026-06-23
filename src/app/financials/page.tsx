@@ -7,7 +7,6 @@ import SplitScreen from "@/components/SplitScreen";
 import ButtonPill from "@/components/ButtonPill";
 import CharReveal from "@/components/CharReveal";
 import AnimatedCounter from "@/components/AnimatedCounter";
-import { getProfileById } from "@/data/profiles";
 import type { JobProfile } from "@/data/profiles";
 import { Loader2, ArrowLeft, Sparkles } from "lucide-react";
 
@@ -17,6 +16,7 @@ function FinancialsContent() {
   const [profile, setProfile] = useState<JobProfile | null>(null);
   const [salary, setSalary] = useState(0);
   const [loaded, setLoaded] = useState(false);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     const jobId = searchParams.get("job");
@@ -27,14 +27,26 @@ function FinancialsContent() {
       return;
     }
 
-    const found = getProfileById(jobId);
-    if (found) {
-      setProfile(found);
-      setSalary(sal || found.salary);
-      const timer = setTimeout(() => setLoaded(true), 400);
-      return () => clearTimeout(timer);
-    }
+    fetch(`/api/evolve?job=${encodeURIComponent(jobId)}&salary=${sal}`)
+      .then((res) => {
+        if (!res.ok) throw new Error("Not found");
+        return res.json();
+      })
+      .then((data: JobProfile) => {
+        setProfile(data);
+        setSalary(data.salary);
+        setTimeout(() => setLoaded(true), 400);
+      })
+      .catch(() => setError(true));
   }, [searchParams, router]);
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center min-h-[calc(100vh-5rem)]">
+        <p className="font-sans text-body text-static-red-light">Profile not found</p>
+      </div>
+    );
+  }
 
   if (!profile) {
     return (

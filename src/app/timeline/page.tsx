@@ -7,7 +7,6 @@ import TimelineView from "@/components/TimelineView";
 import ButtonPill from "@/components/ButtonPill";
 import CharReveal from "@/components/CharReveal";
 import EvolutionLoader from "@/components/EvolutionLoader";
-import { getProfileById } from "@/data/profiles";
 import type { JobProfile } from "@/data/profiles";
 import { ArrowRight, Loader2 } from "lucide-react";
 
@@ -18,6 +17,7 @@ function TimelineContent() {
   const [salary, setSalary] = useState(0);
   const [loading, setLoading] = useState(true);
   const [loaded, setLoaded] = useState(false);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     const jobId = searchParams.get("job");
@@ -28,18 +28,30 @@ function TimelineContent() {
       return;
     }
 
-    const found = getProfileById(jobId);
-    if (found) {
-      setProfile(found);
-      setSalary(sal || found.salary);
-    }
+    fetch(`/api/evolve?job=${encodeURIComponent(jobId)}&salary=${sal}`)
+      .then((res) => {
+        if (!res.ok) throw new Error("Not found");
+        return res.json();
+      })
+      .then((data: JobProfile) => {
+        setProfile(data);
+        setSalary(data.salary);
+      })
+      .catch(() => setError(true));
   }, [searchParams, router]);
 
   const handleLoadComplete = useCallback(() => {
     setLoading(false);
-    // Small delay for smooth transition
     setTimeout(() => setLoaded(true), 100);
   }, []);
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center min-h-[calc(100vh-5rem)]">
+        <p className="font-sans text-body text-static-red-light">Profile not found</p>
+      </div>
+    );
+  }
 
   if (!profile) {
     return (
@@ -53,7 +65,6 @@ function TimelineContent() {
 
   return (
     <>
-      {/* Loading screen with LLM research simulation */}
       {loading && <EvolutionLoader onComplete={handleLoadComplete} />}
 
       <div className="max-w-3xl mx-auto px-6 py-12">
