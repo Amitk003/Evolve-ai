@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
+import AnimatedBackground from "@/components/AnimatedBackground";
 
 export const metadata: Metadata = {
   title: "Evolve.ai — Future-Proof Your Career",
@@ -16,8 +17,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased">
       <body className="min-h-full flex flex-col bg-studio-black text-warm-cream font-sans">
+        <AnimatedBackground />
         <NavBar />
-        <main className="flex-1 pt-20">{children}</main>
+        <main className="flex-1 pt-20 relative" style={{ zIndex: 1 }}>{children}</main>
       </body>
     </html>
   );

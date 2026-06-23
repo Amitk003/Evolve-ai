@@ -60,21 +60,19 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-[calc(100vh-5rem)] px-6">
-      <div className="w-full max-w-xl mx-auto text-center animate-fade-in">
+    <div className="relative flex flex-col items-center justify-center min-h-[calc(100vh-5rem)] px-6 overflow-hidden">
+      <div className="relative w-full max-w-3xl mx-auto text-center animate-fade-in" style={{ zIndex: 1 }}>
         {/* Tagline */}
         <p className="font-sans text-caption text-burnt-sienna uppercase tracking-[0.2em] mb-5">
           Will AI Steal Your Future?
         </p>
 
-        {/* Headline */}
-        <div className="mb-8 max-w-lg mx-auto">
-          <p className="font-sans text-display font-medium leading-display text-warm-cream">
-            Don&apos;t predict the end of your career.
-          </p>
-          <p className="font-sans text-display font-medium leading-display text-burnt-sienna mt-2">
-            Finance its evolution.
-          </p>
+        {/* Headline — single line */}
+        <div className="mb-8 mx-auto">
+          <h1 className="font-sans text-2xl sm:text-3xl md:text-4xl lg:text-display font-medium leading-tight md:leading-display text-warm-cream whitespace-nowrap">
+            Don&apos;t predict the end of your career.{" "}
+            <span className="text-burnt-sienna">Finance its evolution.</span>
+          </h1>
         </div>
 
         <p className="font-sans text-subheading text-grey-brown mb-12 max-w-md mx-auto">
