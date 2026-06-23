@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 import { Search, Briefcase, DollarSign } from "lucide-react";
 import GhostInput from "@/components/GhostInput";
 import ButtonPill from "@/components/ButtonPill";
-import CharReveal from "@/components/CharReveal";
 import { searchProfiles, type JobProfile } from "@/data/profiles";
 
 export default function Home() {

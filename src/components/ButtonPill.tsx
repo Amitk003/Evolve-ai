@@ -18,9 +18,9 @@ export default function ButtonPill({
 
   const variants = {
     filled:
-      "bg-dark-cork text-warm-cream rounded-[36px] px-6 py-[14.4px] border border-transparent hover:opacity-90",
+      "bg-dark-cork text-warm-cream rounded-[36px] px-6 py-3 border border-transparent hover:opacity-90",
     ghost:
-      "bg-transparent text-warm-cream rounded-[22.5px] px-4 py-[7.5px] border border-warm-cream hover:border-burnt-sienna",
+      "bg-transparent text-warm-cream rounded-[22.5px] px-4 py-2 border border-warm-cream hover:border-burnt-sienna",
     outlined:
       "bg-transparent text-burnt-sienna rounded-[9999px] px-5 py-[10px] border border-burnt-sienna hover:opacity-80",
   };

@@ -97,8 +97,8 @@ Inspired by the **ORYZO AI** aesthetic — warm dark minimalism.
 | Dark Cork | `#382416` | Filled button bg |
 | Burnt Sienna | `#dc5000` | Hairline accent |
 | Grey Brown | `#6c5f51` | Muted text |
-| Static Red | `#8b1a1a` | Static path (finacial) |
-| Evolved Green | `#1a6b3c` | Evolved path (finacial) |
+| Static Red | `#8b1a1a` | Static path (financial) |
+| Evolved Green | `#1a6b3c` | Evolved path (financial) |
 
 Typography uses **Plus Jakarta Sans Variable** at every scale from 10px to 51px.
 

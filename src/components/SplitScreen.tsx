@@ -9,6 +9,7 @@ interface SplitScreenProps {
   evolvedSalary: number;
   salaryIncreasePct: number;
   newTitle: string;
+  disposable?: { label: string; amount: number }[];
 }
 
 export default function SplitScreen({
@@ -16,11 +17,16 @@ export default function SplitScreen({
   evolvedSalary,
   salaryIncreasePct,
   newTitle,
+  disposable = [],
 }: SplitScreenProps) {
   const [allocated, setAllocated] = useState(false);
 
   const formatSalary = (n: number) =>
     "$" + n.toLocaleString("en-US") + "/yr";
+
+  const monthlyDisposable = disposable.reduce((sum, d) => sum + d.amount, 0);
+  const totalNeeded = monthlyDisposable * 12;
+  const spendingLabels = disposable.map((d) => d.label).join(", ");
 
   return (
     <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-0 rounded-xl overflow-hidden">
@@ -115,19 +121,19 @@ export default function SplitScreen({
                 />
               </svg>
               <span className="absolute inset-0 flex items-center justify-center font-sans text-body text-warm-cream">
-                {allocated ? "$50" : "$0"}
+                {allocated ? `$${monthlyDisposable}` : "$0"}
               </span>
             </div>
             <div className="leading-tight">
               <p className="font-sans text-body text-warm-cream">
                 {allocated
-                  ? "$50/month allocated to Evolve Fund"
-                  : "$50/month available from disposable spending"}
+                  ? `$${monthlyDisposable}/month allocated to Evolve Fund`
+                  : `$${monthlyDisposable}/month available from disposable spending`}
               </p>
               <p className="font-sans text-caption text-grey-brown mt-1">
                 {allocated
-                  ? "From: unused subscriptions & dining out"
-                  : "Unused subscriptions, dining out, misc."}
+                  ? `From: ${spendingLabels.toLowerCase()}`
+                  : `${spendingLabels}`}
               </p>
             </div>
           </div>
@@ -151,10 +157,10 @@ export default function SplitScreen({
         {allocated && (
           <div className="mt-5 p-4 border border-evolved-green/20 rounded-lg bg-evolved-green/5 animate-fade-in">
             <p className="font-sans text-body text-evolved-green-light">
-              To gain these skills, you need $600 over 12 months.
+              To gain these skills, you need ${totalNeeded} over 12 months.
             </p>
             <p className="font-sans text-body text-warm-cream/80 mt-1">
-              We found <strong className="text-evolved-green-light">$50/month</strong> in your current spending
+              We found <strong className="text-evolved-green-light">${monthlyDisposable}/month</strong> in your current spending
               to allocate to your Future-Proof Fund.
             </p>
           </div>

@@ -72,25 +72,21 @@ Colors, typography, spacing, and radii are defined as **CSS custom properties** 
 ```
 RootLayout
 ├── NavBar (fixed top, letter-stagger animation)
-├── PageTransition (AnimatePresence wrapper)
-│   ├── HomePage
-│   │   ├── CharReveal (headline)
-│   │   ├── GhostInput (search + salary)
-│   │   └── ButtonPill (submit)
-│   ├── TimelinePage
-│   │   ├── CharReveal (title)
-│   │   ├── TimelineView
-│   │   │   └── TimelineStep (per year)
-│   │   └── ButtonPill (nav to financials)
-│   └── FinancialsPage
-│       ├── CharReveal (title)
-│       ├── AnimatedCounter (salary increase)
-│       └── SplitScreen
-│           ├── StaticPath (red)
-│           ├── EvolvedPath (green)
-│           ├── PieChart (SVG)
-│           └── ButtonPill (allocate)
-└── ScrollPrompt (fixed bottom)
+├── HomePage
+│   ├── GhostInput (search + salary)
+│   └── ButtonPill (submit)
+├── TimelinePage
+│   ├── CharReveal (title)
+│   ├── TimelineView
+│   │   └── TimelineStep (per year)
+│   └── ButtonPill (nav to financials)
+└── FinancialsPage
+│   ├── CharReveal (title)
+│   ├── AnimatedCounter (salary increase)
+│   └── SplitScreen
+│       ├── StaticPath (red)
+│       ├── EvolvedPath (green)
+│       └── ButtonPill (allocate)
 ```
 
 ---
@@ -110,7 +106,6 @@ RootLayout
 
 | Animation | Implementation | Trigger |
 |-----------|---------------|---------|
-| Page transitions | `PageTransition` (framer-motion) | Route change |
 | Character reveal | `CharReveal` (IntersectionObserver + CSS transitions) | Scroll into view |
 | Salary counter | `AnimatedCounter` (requestAnimationFrame + eased lerp) | Page mount |
 | Split-screen reveal | CSS `clip-path` animation | Page mount |

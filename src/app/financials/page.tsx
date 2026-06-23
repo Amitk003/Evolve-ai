@@ -86,6 +86,7 @@ function FinancialsContent() {
             evolvedSalary={evolvedSalary}
             salaryIncreasePct={evolution.salaryIncreasePct}
             newTitle={evolution.newTitle}
+            disposable={profile.disposable}
           />
         </div>
       )}

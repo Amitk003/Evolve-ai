@@ -32,29 +32,6 @@
   --text-display: 3.1875rem;
   --leading-display: 0.9;
 
-  --spacing-6: 6px;
-  --spacing-8: 8px;
-  --spacing-9: 9px;
-  --spacing-10: 10px;
-  --spacing-12: 12px;
-  --spacing-14: 14px;
-  --spacing-18: 18px;
-  --spacing-24: 24px;
-  --spacing-31: 31px;
-  --spacing-41: 41px;
-  --spacing-45: 45px;
-  --spacing-68: 68px;
-  --spacing-204: 204px;
-
-  --radius-xl: 12px;
-  --radius-2xl: 22.5px;
-  --radius-3xl: 36px;
-
-  --radius-cards: 12px;
-  --radius-inputs: 0px;
-  --radius-buttons-flat: 0px;
-  --radius-buttons-pill: 36px;
-  --radius-buttons-rounded: 22.5px;
 }
 
 * {

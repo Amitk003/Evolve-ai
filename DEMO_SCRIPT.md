@@ -38,7 +38,7 @@ Meet **Evolve.ai**."
 
 **[Point to each year as it appears]**
 
-"In 2024, 70% of her job is manual data entry. By 2025, AI handles 40% of tasks — Alex shifts to analysis. By 2027, she's not entering data at all. She's an **AI Anomaly Auditor & Strategic Advisor** — a $55,000/year role."
+"Currently, 70% of her job is manual data entry. By 2025, AI handles 40% of tasks — Alex shifts to analysis. By 2027, she's not entering data at all. She's an **AI Anomaly Auditor & Strategic Advisor** — a $79,000/year role."
 
 "See the two skills she needs? Prompt Engineering for Auditing and Python for Data Validation. Specific, learnable, achievable."
 
