@@ -67,12 +67,14 @@ export default function Home() {
           Will AI Steal Your Future?
         </p>
 
-        {/* Headline — single line */}
+        {/* Headline */}
         <div className="mb-8 mx-auto">
-          <h1 className="font-sans text-2xl sm:text-3xl md:text-4xl lg:text-display font-medium leading-tight md:leading-display text-warm-cream whitespace-nowrap">
-            Don&apos;t predict the end of your career.{" "}
-            <span className="text-burnt-sienna">Finance its evolution.</span>
+          <h1 className="font-sans text-2xl sm:text-3xl md:text-4xl lg:text-display font-medium leading-tight md:leading-display text-warm-cream">
+            Don&apos;t predict the end of your career.
           </h1>
+          <p className="font-sans text-2xl sm:text-3xl md:text-4xl lg:text-display font-medium leading-tight md:leading-display text-burnt-sienna mt-1">
+            Finance its evolution.
+          </p>
         </div>
 
         <p className="font-sans text-subheading text-grey-brown mb-12 max-w-md mx-auto">
