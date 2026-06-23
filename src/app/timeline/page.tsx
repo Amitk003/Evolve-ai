@@ -5,6 +5,7 @@ import { Suspense, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import TimelineView from "@/components/TimelineView";
 import ButtonPill from "@/components/ButtonPill";
+import CharReveal from "@/components/CharReveal";
 import { getProfileById } from "@/data/profiles";
 import type { JobProfile } from "@/data/profiles";
 import { ArrowRight, Loader2 } from "lucide-react";
@@ -52,9 +53,12 @@ function TimelineContent() {
         <p className="font-sans text-caption text-burnt-sienna uppercase tracking-[0.2em] mb-3">
           Your Evolution Timeline
         </p>
-        <h1 className="font-sans text-heading-lg font-medium leading-heading-lg text-warm-cream mb-3">
-          {profile.title} → {evolution.newTitle}
-        </h1>
+        <CharReveal
+          text={`${profile.title}  →  ${evolution.newTitle}`}
+          className="font-sans text-heading-lg font-medium leading-heading-lg text-warm-cream mb-3"
+          as="h1"
+          staggerMs={15}
+        />
         <p className="font-sans text-body text-grey-brown">
           AI isn&apos;t going to fire you. But someone using AI will. Here&apos;s
           exactly how your role evolves.

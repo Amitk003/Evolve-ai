@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { Search, Briefcase, DollarSign } from "lucide-react";
 import GhostInput from "@/components/GhostInput";
 import ButtonPill from "@/components/ButtonPill";
+import CharReveal from "@/components/CharReveal";
 import { searchProfiles, type JobProfile } from "@/data/profiles";
 
 export default function Home() {
@@ -67,13 +68,20 @@ export default function Home() {
         </p>
 
         {/* Headline */}
-        <h1 className="font-sans text-display font-medium leading-display text-warm-cream mb-6">
-          Don&apos;t predict the end
+        <div className="mb-6">
+          <CharReveal
+            text="Don't predict the end of your career."
+            className="font-sans text-display font-medium leading-display text-warm-cream"
+            staggerMs={25}
+          />
           <br />
-          of your career.
-          <br />
-          <span className="text-burnt-sienna">Finance its evolution.</span>
-        </h1>
+          <CharReveal
+            text="Finance its evolution."
+            className="font-sans text-display font-medium leading-display text-burnt-sienna"
+            staggerMs={25}
+            as="span"
+          />
+        </div>
 
         <p className="font-sans text-subheading text-grey-brown mb-10 max-w-lg mx-auto">
           Type your job title below. Evolve.ai builds a financial roadmap to
@@ -145,7 +153,7 @@ export default function Home() {
             <ButtonPill
               variant="filled"
               onClick={handleSubmit}
-              className="text-base px-8 py-3"
+              className="text-base px-10 py-3"
             >
               Run My Evolution
             </ButtonPill>

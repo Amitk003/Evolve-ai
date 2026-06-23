@@ -5,6 +5,8 @@ import { Suspense, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import SplitScreen from "@/components/SplitScreen";
 import ButtonPill from "@/components/ButtonPill";
+import CharReveal from "@/components/CharReveal";
+import AnimatedCounter from "@/components/AnimatedCounter";
 import { getProfileById } from "@/data/profiles";
 import type { JobProfile } from "@/data/profiles";
 import { Loader2, ArrowLeft, Sparkles } from "lucide-react";
@@ -56,13 +58,21 @@ function FinancialsContent() {
         <p className="font-sans text-caption text-burnt-sienna uppercase tracking-[0.2em] mb-3">
           The Financial Impact
         </p>
-        <h1 className="font-sans text-heading-lg font-medium leading-heading-lg text-warm-cream mb-3">
-          Your Future, Split in Two
-        </h1>
+        <CharReveal
+          text="Your Future, Split in Two"
+          className="font-sans text-heading-lg font-medium leading-heading-lg text-warm-cream mb-3"
+          as="h1"
+          staggerMs={20}
+        />
         <p className="font-sans text-body text-grey-brown">
           One path leads to stagnation. The other to a{" "}
           <span className="text-evolved-green-light">
-            +${increaseAmount.toLocaleString()}/year
+            +$
+            <AnimatedCounter
+              to={increaseAmount}
+              duration={2000}
+            />
+            /year
           </span>{" "}
           future.
         </p>
